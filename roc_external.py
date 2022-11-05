@@ -6,7 +6,7 @@ import time
 import proxydriver
 
 
-loc_firefox = r'C:\.projects\roc_external\geckodriver.exe'
+loc_firefox = r'.\geckodriver.exe'
 ffexec = r'C:\Program Files\Mozilla Firefox\firefox.exe'
 
 proxy_lifetime_seconds = 6
@@ -82,7 +82,7 @@ def sticky_loop(driver: proxydriver.CustomFirefoxDriver):
 
 
 print('Opening driver')
-driver = proxydriver.CustomFirefoxDriver(ff_loc=loc_firefox, ff_exec=ffexec)
+driver = proxydriver.CustomFirefoxDriver(ff_loc=loc_firefox, ff_exec=ffexec, urls=urls)
 print('Driver opened')
 
 sticky_loop(driver)
